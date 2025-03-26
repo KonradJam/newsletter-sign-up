@@ -1,0 +1,54 @@
+@use "sass:map" as map;
+@use "sass:list" as list;
+@use "sass:math" as math;
+
+@function px-to-rem($value-in-px, $font-size-browser: 16px) {
+  @return ($value-in-px / $font-size-browser) * 1rem;
+}
+
+@function is-px($value) {
+  @if (list.index("px", math.unit($value))) {
+    @return px-to-rem($value);
+  } @else {
+    @return $value;
+  }
+}
+
+@function clamp-size($size-min, $size-max, $viewport-min, $viewport-max) {
+  $size-min: is-px($size-min);
+  $size-max: is-px($size-max);
+  $viewport-min: is-px($viewport-min);
+  $viewport-max: is-px($viewport-max);
+  
+  $change: ($size-max - $size-min) / ($viewport-max - $viewport-min);
+  $a: $size-max - ($viewport-max * $change);
+  $b: 100vi * $change;
+  @return clamp(#{$size-min}, calc(#{$a} + #{$b}), #{$size-max});
+}
+
+@mixin fluid-typography($preset) {
+  @each $style-name, $style-value in map.get($preset, styles) {
+    #{$style-name}: #{$style-value};
+  }
+
+  $font-sizes: map.get($preset, font-size);
+
+  @if (list.length($font-sizes) == 1) {
+    font-size: map.get(map.get($font-sizes, font-size-1), fs);
+  } @else {
+    @for $i from 2 through list.length($font-sizes) {
+      $font-size-min: map.get(map.get($font-sizes, font-size-#{$i - 1}), fs);
+      $font-size-max: map.get(map.get($font-sizes, font-size-#{$i}), fs);
+      $viewport-min: map.get(map.get($font-sizes, font-size-#{$i - 1}), vw);
+      $viewport-max: map.get(map.get($font-sizes, font-size-#{$i}), vw);
+      
+      @if ($i > 2) {
+        @media (min-width: $viewport-min) {
+          font-size: clamp-size($font-size-min, $font-size-max, $viewport-min, $viewport-max);
+        }
+      } @else {
+        font-size: clamp-size($font-size-min, $font-size-max, $viewport-min, $viewport-max);
+      }
+    }
+  }
+}

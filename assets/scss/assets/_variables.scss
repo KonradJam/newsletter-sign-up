@@ -1,0 +1,62 @@
+// Colors
+$color-black: #000000;
+$color-blue-700: #36384d;
+$color-blue-800: #242742;
+$color-grey: #949494;
+$color-red: #ff6155;
+$color-white: #ffffff;
+
+// Spacing (px -> rem)
+$spacing-100: 0.5rem;  // 8px
+$spacing-200: 1rem;    // 16px
+$spacing-300: 1.5rem;  // 24px
+$spacing-400: 2rem;    // 32px
+$spacing-500: 2.5rem;  // 40px
+$spacing-600: 3rem;    // 48px
+$spacing-800: 4rem;    // 64px
+$spacing-900: 4.5rem;  // 72px
+$spacing-1300: 6.5rem; // 104px
+
+// Viewports
+$viewport-mobile: 23.4375rem;  // 375px
+$viewport-tablet: 48rem;       // 768px
+$viewport-laptop: 64rem;       // 1024px
+$viewport-desktop: 90rem;      // 1440px
+
+// Font Family
+$font-primary: "Roboto", sans-serif;
+
+// Text presets
+$text-preset-1: (
+  font-size: (
+    font-size-1: (fs: 2.5rem, vw: $viewport-mobile),
+    font-size-2: (fs: 3.5rem, vw: $viewport-tablet)
+  ),
+  styles: (
+    font-family: $font-primary,
+    font-weight: 700,
+    line-height: 100%
+  )
+);
+
+$text-preset-2: (
+  font-size: (
+    font-size-1: (fs: 1rem)
+  ),
+  styles: (
+    font-family: $font-primary,
+    font-weight: 400,
+    line-height: 150%
+  )
+);
+
+$text-preset-3: (
+  font-size: (
+    font-size-1: (fs: 0.75rem)
+  ),
+  styles: (
+    font-family: $font-primary,
+    font-weight: 700,
+    line-height: 150%
+  )
+);

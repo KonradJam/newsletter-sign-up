@@ -1,0 +1,26 @@
+@use "assets/reset";
+@use "assets/variables" as *;
+@use "assets/fluid-typography" as *;
+
+.subscribe__image {
+    inline-size: 100%;
+}
+
+.subscribe__container {
+    padding: $spacing-500 $spacing-300;
+}
+
+.subscribe__title {
+    @include fluid-typography($text-preset-1);
+    color: $color-blue-800;
+}
+
+.subscribe__description {
+    @include fluid-typography($text-preset-2);
+    color: $color-blue-800;
+}
+
+.subscribe__item {
+    @include fluid-typography($text-preset-2);
+    color: $color-blue-800;
+}

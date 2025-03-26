@@ -1,0 +1,67 @@
+/* RESET - Start */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*RESET - stop*/
+.subscribe__image {
+  inline-size: 100%;
+}
+
+.subscribe__container {
+  padding: 2.5rem 1.5rem;
+}
+
+.subscribe__title {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  line-height: 100%;
+  font-size: clamp(2.5rem, 1.5458015267rem + 4.0712468193vi, 3.5rem);
+  color: #242742;
+}
+
+.subscribe__description {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 1rem;
+  color: #242742;
+}
+
+.subscribe__item {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 1rem;
+  color: #242742;
+}
