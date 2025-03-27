@@ -1,26 +1,67 @@
 @use "assets/reset";
 @use "assets/variables" as *;
 @use "assets/fluid-typography" as *;
+@use "assets/mixins" as *;
 
-.subscribe__image {
-    inline-size: 100%;
-}
+.subscribe {
+    &__image {
+        inline-size: 100%;
+    }
 
-.subscribe__container {
-    padding: $spacing-500 $spacing-300;
-}
+    &__container {
+        padding: $spacing-500 $spacing-300;
+    }
 
-.subscribe__title {
-    @include fluid-typography($text-preset-1);
-    color: $color-blue-800;
-}
+    &__content {
+        @include flex-col-space($spacing-300);
+    }
 
-.subscribe__description {
-    @include fluid-typography($text-preset-2);
-    color: $color-blue-800;
-}
+    &__header {
+        @include flex-col-space($spacing-300);
+    }
 
-.subscribe__item {
-    @include fluid-typography($text-preset-2);
-    color: $color-blue-800;
+    &__title {
+        @include fluid-typography($text-preset-1);
+        color: $color-blue-800;
+    }
+
+    &__description {
+        @include fluid-typography($text-preset-2);
+        color: $color-blue-800;
+    }
+
+    &__list--svg-marker {
+        position: relative;
+        list-style: none;
+    }
+
+    &__list--svg-marker > li {
+        padding-inline-start: 1.9375rem;
+    }
+
+    &__list--svg-marker > li::marker {
+        content: none;
+    }
+
+    &__list--svg-marker > li::before {
+        position: absolute;
+        left: 0;
+        content: '';
+        display: inline-block;
+        inline-size: 1.3125rem;
+        block-size: 1.3125rem;
+        background-image: url("../images/icon-list.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+
+    }
+
+    &__item {
+        @include fluid-typography($text-preset-2);
+        color: $color-blue-800;
+    }
+
+    &__item:not(:last-child) {
+        margin-block-end: $spacing-100;
+    }
 }

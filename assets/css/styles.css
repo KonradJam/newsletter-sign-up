@@ -37,11 +37,19 @@ h1, h2, h3, h4, h5, h6 {
 .subscribe__image {
   inline-size: 100%;
 }
-
 .subscribe__container {
   padding: 2.5rem 1.5rem;
 }
-
+.subscribe__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.subscribe__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 .subscribe__title {
   font-family: Roboto, sans-serif;
   font-weight: 700;
@@ -49,7 +57,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(2.5rem, 1.5458015267rem + 4.0712468193vi, 3.5rem);
   color: #242742;
 }
-
 .subscribe__description {
   font-family: Roboto, sans-serif;
   font-weight: 400;
@@ -57,11 +64,34 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1rem;
   color: #242742;
 }
-
+.subscribe__list--svg-marker {
+  position: relative;
+  list-style: none;
+}
+.subscribe__list--svg-marker > li {
+  padding-inline-start: 1.9375rem;
+}
+.subscribe__list--svg-marker > li::marker {
+  content: none;
+}
+.subscribe__list--svg-marker > li::before {
+  position: absolute;
+  left: 0;
+  content: "";
+  display: inline-block;
+  inline-size: 1.3125rem;
+  block-size: 1.3125rem;
+  background-image: url("../images/icon-list.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 .subscribe__item {
   font-family: Roboto, sans-serif;
   font-weight: 400;
   line-height: 150%;
   font-size: 1rem;
   color: #242742;
+}
+.subscribe__item:not(:last-child) {
+  margin-block-end: 0.5rem;
 }
