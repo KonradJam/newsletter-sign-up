@@ -13,8 +13,8 @@
 <body>
   <article class="subscribe">
     <img class="subscribe__image" alt=""
-      srcset="./assets/images/illustration-sign-up-mobile.svg 599w, ./assets/images/illustration-sign-up-desktop.svg 1024w"
-      sizes="(max-width: 599px) 599w, (min-width: 600px) 1024w"
+      srcset="./assets/images/illustration-sign-up-mobile.svg 528w, ./assets/images/illustration-sign-up-desktop.svg 400w"
+      sizes="(max-width: 1023px) 528px, (min-width: 1024px) 400px"
       src="./assets/images/illustration-sign-up-desktop.svg"
     >
     <div class="subscribe__container">
@@ -30,8 +30,10 @@
         </ul>
       </div>
       <form action="" class="subscribe__form">
-        <subscribe__label>Email address</subscribe__label>
-        <input type="email" class="subscribe__input" placeholder="email@company.com"></input>
+        <div class="subscribe__input-container">
+          <label class="subscribe__label">Email address</label>
+          <input type="email" class="subscribe__input" placeholder="email@company.com"></input>
+        </div>
         <button class="subscribe__submit" type="submit">Subscribe to monthly newsletter</button>
       </form>
     </div>

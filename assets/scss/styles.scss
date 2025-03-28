@@ -4,11 +4,14 @@
 @use "assets/mixins" as *;
 
 .subscribe {
+    background-color: $color-white;
+
     &__image {
         inline-size: 100%;
     }
 
     &__container {
+        @include flex-col-space($spacing-500);
         padding: $spacing-500 $spacing-300;
     }
 
@@ -53,7 +56,6 @@
         background-image: url("../images/icon-list.svg");
         background-size: contain;
         background-repeat: no-repeat;
-
     }
 
     &__item {
@@ -63,5 +65,79 @@
 
     &__item:not(:last-child) {
         margin-block-end: $spacing-100;
+    }
+
+    &__form {
+        @include flex-col-space($spacing-300);
+    }
+
+    &__input-container {
+        @include flex-col-space($spacing-100);
+    }
+
+    &__label {
+        @include fluid-typography($text-preset-3);
+    }
+
+    &__input {
+        @include fluid-typography($text-preset-2);
+        padding-inline-start: $spacing-300;
+        color: $color-grey;
+        inline-size: 100%;
+        block-size: 3.5rem;
+        border: 1px solid $color-grey;
+        border-radius: .5rem;
+    }
+
+    &__submit {
+        @include fluid-typography($text-preset-2);
+        color: $color-white;
+        font-weight: 700;
+        inline-size: 100%;
+        block-size: 3.5rem;
+        background-color: $color-blue-800;
+        border-radius: .5rem;
+        border: none;
+    }
+
+}
+
+@media (min-width: $viewport-mobile-l) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-block-size: 100vh;
+        background-color: $color-blue-800;
+        padding: $spacing-200;
+    }
+
+    .subscribe {
+        inline-size: 100%;
+        max-inline-size: 38.0625rem;
+        padding: $spacing-500;
+        border-radius: 2.25rem;
+
+        &__image {
+            border-radius: 1.5rem;
+        }
+
+        &__container {
+            padding: $spacing-500 0 0 0;
+            gap: $spacing-300;
+        }
+
+        &__form {
+            gap: $spacing-200;
+        }
+    }
+}
+
+@media (min-width: $viewport-laptop) {
+    .subscribe {
+        display: flex;
+        max-inline-size: 56.5rem;
+        max-block-size: 40.0625rem;
+        flex-direction: row-reverse;
     }
 }
