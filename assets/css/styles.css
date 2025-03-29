@@ -34,10 +34,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*RESET - stop*/
+body {
+  position: relative;
+}
+
 .subscribe {
   background-color: #ffffff;
 }
-.subscribe__image {
+.subscribe__image > * {
   inline-size: 100%;
 }
 .subscribe__container {
@@ -111,11 +115,22 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   gap: 0.5rem;
 }
+.subscribe__label-container {
+  display: flex;
+  justify-content: space-between;
+}
 .subscribe__label {
   font-family: Roboto, sans-serif;
   font-weight: 700;
   line-height: 150%;
   font-size: 0.75rem;
+}
+.subscribe__invalid {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  line-height: 150%;
+  font-size: 0.75rem;
+  color: #ff6155;
 }
 .subscribe__input {
   font-family: Roboto, sans-serif;
@@ -129,7 +144,12 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #949494;
   border-radius: 0.5rem;
 }
-.subscribe__submit {
+.subscribe__input--invalid {
+  border-color: #ff6155;
+  color: #ff6155;
+  background-color: #ff6155;
+}
+.subscribe__submit, .message__btn-dismiss {
   font-family: Roboto, sans-serif;
   font-weight: 400;
   line-height: 150%;
@@ -141,6 +161,43 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #242742;
   border-radius: 0.5rem;
   border: none;
+  cursor: pointer;
+}
+.subscribe__submit:hover, .message__btn-dismiss:hover {
+  background-image: linear-gradient(to right, #FF6A3A, #FF527B);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: space-between;
+  border-color: #ffffff;
+  block-size: 100vh;
+  padding: 17.8vh 1.5rem 8.3vh 1.5rem;
+  background-color: #ffffff;
+}
+.message__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.message__title {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  line-height: 100%;
+  font-size: clamp(2.5rem, 1.5458015267rem + 4.0712468193vi, 3.5rem);
+  color: #242742;
+}
+.message__descriotion {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 1rem;
+  color: #242742;
+}
+.message__btn-dismiss:hover {
+  background-image: linear-gradient(to right, #FF6A3A, #FF527B);
 }
 
 @media (min-width: 36rem) {
@@ -158,7 +215,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 2.5rem;
     border-radius: 2.25rem;
   }
-  .subscribe__image {
+  .subscribe__image > * {
     border-radius: 1.5rem;
   }
   .subscribe__container {
@@ -168,12 +225,38 @@ h1, h2, h3, h4, h5, h6 {
   .subscribe__form {
     gap: 1rem;
   }
+  .message {
+    inline-size: 100%;
+    block-size: auto;
+    max-inline-size: 31.5rem;
+    padding: 4rem;
+    border-radius: 2.25rem;
+    justify-content: baseline;
+    gap: 2rem;
+  }
 }
 @media (min-width: 64rem) {
   .subscribe {
     display: flex;
     max-inline-size: 56.5rem;
-    max-block-size: 40.0625rem;
     flex-direction: row-reverse;
+    padding: 1.5rem 2rem;
+    gap: 4rem;
+    align-items: center;
   }
+  .subscribe__image > * {
+    inline-size: 25rem;
+  }
+  .subscribe__container {
+    gap: 2rem;
+  }
+  .subscribe__contant {
+    gap: 2rem;
+  }
+  .subscribe__header {
+    gap: 2rem;
+  }
+}
+.hidden {
+  display: none;
 }

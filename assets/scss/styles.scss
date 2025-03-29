@@ -3,10 +3,14 @@
 @use "assets/fluid-typography" as *;
 @use "assets/mixins" as *;
 
+body {
+    position: relative;
+}
+
 .subscribe {
     background-color: $color-white;
 
-    &__image {
+    &__image > * {
         inline-size: 100%;
     }
 
@@ -75,8 +79,18 @@
         @include flex-col-space($spacing-100);
     }
 
+    &__label-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
     &__label {
         @include fluid-typography($text-preset-3);
+    }
+
+    &__invalid {
+        @include fluid-typography($text-preset-3);
+        color: $color-red;
     }
 
     &__input {
@@ -89,6 +103,12 @@
         border-radius: .5rem;
     }
 
+    &__input--invalid {
+        border-color: $color-red;
+        color: $color-red;
+        background-color: $color-red;
+    }
+
     &__submit {
         @include fluid-typography($text-preset-2);
         color: $color-white;
@@ -98,6 +118,43 @@
         background-color: $color-blue-800;
         border-radius: .5rem;
         border: none;
+        cursor: pointer;
+    }
+
+    &__submit:hover {
+        background-image: $color-gradient;
+    }
+
+}
+
+.message {
+    @include flex-col-space(0);
+    justify-content: space-between;
+    border-color: $color-white;
+    block-size: 100vh;
+    padding: 17.8vh $spacing-300 8.3vh $spacing-300;
+    background-color: $color-white;
+
+    &__content {
+        @include flex-col-space($spacing-400);
+    }
+
+    &__title {
+        @include fluid-typography($text-preset-1);
+        color: $color-blue-800;
+    }
+
+    &__descriotion {
+        @include fluid-typography($text-preset-2);
+        color: $color-blue-800;
+    }
+
+    &__btn-dismiss {
+        @extend .subscribe__submit;
+    }
+
+    &__btn-dismiss:hover {
+        background-image: $color-gradient;
     }
 
 }
@@ -118,7 +175,7 @@
         padding: $spacing-500;
         border-radius: 2.25rem;
 
-        &__image {
+        &__image > * {
             border-radius: 1.5rem;
         }
 
@@ -131,13 +188,46 @@
             gap: $spacing-200;
         }
     }
+
+    .message {
+        inline-size: 100%;
+        block-size: auto;
+        max-inline-size: 31.5rem;
+        padding: $spacing-800;
+        border-radius: 2.25rem;
+        justify-content: baseline;
+        gap: $spacing-400;
+    }
 }
 
 @media (min-width: $viewport-laptop) {
     .subscribe {
         display: flex;
         max-inline-size: 56.5rem;
-        max-block-size: 40.0625rem;
         flex-direction: row-reverse;
+        padding: $spacing-300 $spacing-400;
+        gap: $spacing-800;
+        align-items: center;
+
+        &__image > * {
+            inline-size: 25rem;
+        }
+
+        &__container {
+            gap: $spacing-400;
+        }
+
+        &__contant {
+            gap: $spacing-400;
+        }
+
+        &__header {
+            gap: $spacing-400;
+        }
+
     }
+}
+
+.hidden {
+    display: none;
 }

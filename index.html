@@ -12,13 +12,13 @@
 </head>
 <body>
   <article class="subscribe">
-    <img class="subscribe__image" alt=""
-      srcset="./assets/images/illustration-sign-up-mobile.svg 528w, ./assets/images/illustration-sign-up-desktop.svg 400w"
-      sizes="(max-width: 1023px) 528px, (min-width: 1024px) 400px"
-      src="./assets/images/illustration-sign-up-desktop.svg"
-    >
+    <picture class="subscribe__image">
+      <source media="(max-width: 1023px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
+      <source media="(min-width: 1024px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
+      <img src="./assets/images/illustration-sign-up-desktop.svg" alt="">
+    </picture>
     <div class="subscribe__container">
-      <div class="subscribe__content">
+      <section class="subscribe__content">
         <header class="subscribe__header">
           <h1 class="subscribe__title">Stay updated!</h1>
           <p class="subscribe__description">Join 60,000+ product managers receiving monthly updates on:</p>
@@ -28,11 +28,11 @@
           <li class="subscribe__item">Measuring to ensure updates are a success</li>
           <li class="subscribe__item">And much more!</li>
         </ul>
-      </div>
+      </section>
       <form action="" class="subscribe__form">
         <div class="subscribe__input-container">
-          <label class="subscribe__label">Email address</label>
-          <input type="email" class="subscribe__input" placeholder="email@company.com"></input>
+          <div class="subscribe__label-container"><label class="subscribe__label">Email address</label><span class="subscribe__invalid">Valid email required</span></div>
+          <input type="email" class="subscribe__input subscribe__input--invalid" placeholder="email@company.com"></input>
         </div>
         <button class="subscribe__submit" type="submit">Subscribe to monthly newsletter</button>
       </form>
@@ -41,13 +41,17 @@
 
   <!-- Success message start -->
 
-  <!-- Thanks for subscribing!
+<article class="message hidden">
+  <section class="message__content">
+    <img src="./assets/images/icon-success.svg" alt="" class="message__image" width="64" height="64">
+    <h1 class="message__title">Thanks for subscribing!</h1>
+    <p class="message__description">
+      A confirmation email has been sent to <strong>ash@loremcompany.com</strong>.
+      Please open it and click the button inside to confirm your subscription.
+    </p>
+  </section>
+  <button class="message__btn-dismiss">Dismiss message</button>
+</article>
 
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message -->
-
-  <!-- Success message end -->
 </body>
 </html>
