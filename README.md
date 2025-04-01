@@ -16,11 +16,11 @@ This is a solution to the [Newsletter sign-up form with success message challeng
 
 ### Screenshot
 
-![](./preview.jpeg)
+![](./preview.png)
 
 ### Links
 
-Live Site URL: [GitHub Pages]()
+Live Site URL: [GitHub Pages](https://konradjam.github.io/newsletter-sign-up/)
 
 ## My process
 
@@ -45,14 +45,14 @@ const EMAIL_REGEX = /^(?!\.)(?!.*\.\.)(?!.*\.$)[a-zA-Z0-9._%+-]+@(?:(?!-)[A-Za-z
 ```
 
 Explenation:
-`^` – Start of the string
-`(?!\.)` – No leading dot
-`(?!.*\.\.)` – No consecutive dots
-`[a-zA-Z0-9._%+-]+` – Local part (before @)
-`@` – The mandatory separator
-`[a-zA-Z0-9-]+` – Domain name (before .)
-`(?:\.[a-zA-Z]{2,})+` – Top-level domain (TLD)
-`$` – End of the string
+- `^` – Start of the string
+- `(?!\.)` – No leading dot
+- `(?!.*\.\.)` – No consecutive dots
+- `[a-zA-Z0-9._%+-]+` – Local part (before @)
+- `@` – The mandatory separator
+- `[a-zA-Z0-9-]+` – Domain name (before .)
+- `(?:\.[a-zA-Z]{2,})+` – Top-level domain (TLD)
+- `$` – End of the string
 
 
 ## Author
