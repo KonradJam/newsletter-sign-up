@@ -143,11 +143,17 @@ body {
   block-size: 3.5rem;
   border: 1px solid #949494;
   border-radius: 0.5rem;
+  color: #242742;
+  outline: none;
+}
+.subscribe__input:focus {
+  border: 1px solid #ffffff;
+  outline: 3px solid #242742;
 }
 .subscribe__input--invalid {
   border-color: #ff6155;
   color: #ff6155;
-  background-color: #ff6155;
+  background-color: rgba(255, 97, 85, 0.1);
 }
 .subscribe__submit, .message__btn-dismiss {
   font-family: Roboto, sans-serif;

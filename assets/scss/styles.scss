@@ -101,12 +101,21 @@ body {
         block-size: 3.5rem;
         border: 1px solid $color-grey;
         border-radius: .5rem;
+        color: $color-blue-800;
+        outline: none;
     }
+
+    &__input:focus {
+        border: 1px solid $color-white;
+        outline: 3px solid $color-blue-800
+    }
+
+
 
     &__input--invalid {
         border-color: $color-red;
         color: $color-red;
-        background-color: $color-red;
+        background-color: rgba($color-red, .10);
     }
 
     &__submit {
