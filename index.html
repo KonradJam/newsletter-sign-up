@@ -11,49 +11,52 @@
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 </head>
 <body>
-  <article id="subscribe" class="subscribe" aria-labelledby="subscribe__title" roel="main">
-    <picture class="subscribe__image">
-      <source media="(max-width: 1023px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
-      <source media="(min-width: 1024px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
-      <img src="./assets/images/illustration-sign-up-desktop.svg" alt="">
-    </picture>
-    <div class="subscribe__container">
-      <section class="subscribe__content">
-        <header class="subscribe__header">
-          <h1 id="subscribe__title" class="subscribe__title">Stay updated!</h1>
-          <p class="subscribe__description">Join 60,000+ product managers receiving monthly updates on:</p>
-        </header>
-        <ul class="subscribe__list subscribe__list--svg-marker">
-          <li class="subscribe__item">Product discovery and building what matters</li>
-          <li class="subscribe__item">Measuring to ensure updates are a success</li>
-          <li class="subscribe__item">And much more!</li>
-        </ul>
-      </section>
-      <form action="#" class="subscribe__form">
-        <div class="subscribe__input-container">
-          <div class="subscribe__label-container">
-            <label class="subscribe__label" for="subscribe__input" for="subscribe__input">Email address</label>
-            <span id="subscribe__invalid" class="subscribe__invalid hidden">Valid email required</span>
+  <main>
+    <h1 class="visually-hidden">Newsletter Sign-up Form</h1>
+    <article id="subscribe" class="subscribe" aria-labelledby="subscribe__title">
+      <picture class="subscribe__image">
+        <source media="(max-width: 1023px)" srcset="./assets/images/illustration-sign-up-mobile.svg">
+        <source media="(min-width: 1024px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
+        <img src="./assets/images/illustration-sign-up-desktop.svg" alt="">
+      </picture>
+      <div class="subscribe__container">
+        <section class="subscribe__content">
+          <header class="subscribe__header">
+            <h2 id="subscribe__title" class="subscribe__title">Stay updated!</h2>
+            <p class="subscribe__description">Join 60,000+ product managers receiving monthly updates on:</p>
+          </header>
+          <ul class="subscribe__list subscribe__list--svg-marker">
+            <li class="subscribe__item">Product discovery and building what matters</li>
+            <li class="subscribe__item">Measuring to ensure updates are a success</li>
+            <li class="subscribe__item">And much more!</li>
+          </ul>
+        </section>
+        <form action="#" class="subscribe__form">
+          <div class="subscribe__input-container">
+            <div class="subscribe__label-container">
+              <label class="subscribe__label" for="subscribe__input" for="subscribe__input">Email address</label>
+              <span id="subscribe__invalid" class="subscribe__invalid hidden">Valid email required</span>
+            </div>
+            <input id="subscribe__input" type="email" class="subscribe__input" name="subscribe__input" placeholder="email@company.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></input>
           </div>
-          <input id="subscribe__input" type="email" class="subscribe__input" name="subscribe__input" placeholder="email@company.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></input>
-        </div>
-        <button id="subscribe__submit" class="subscribe__submit" type="submit">Subscribe to monthly newsletter</button>
-      </form>
-    </div>
-  </article>
-  <!-- Success message start -->
-  <article id="message" class="message hidden" aria-labelledby="message__title">
-    <section class="message__content">
-      <img src="./assets/images/icon-success.svg" alt="" class="message__image" width="64" height="64">
-      <h2 id="message__title" class="message__title">Thanks for subscribing!</h2>
-      <p class="message__description">
-        A confirmation email has been sent to <strong id="message__email">ash@loremcompany.com</strong>.
-        Please open it and click the button inside to confirm your subscription.
-      </p>
-    </section>
-    <button id="message__btn-dismiss" class="message__btn-dismiss">Dismiss message</button>
-  </article>
-  <!-- Success message end -->
+          <button id="subscribe__submit" class="subscribe__submit" type="submit">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
+    </article>
+    <!-- Success message start -->
+    <article id="message" class="message hidden" aria-labelledby="message__title">
+      <section class="message__content">
+        <img src="./assets/images/icon-success.svg" alt="" class="message__image" width="64" height="64">
+        <h2 id="message__title" class="message__title">Thanks for subscribing!</h2>
+        <p class="message__description">
+          A confirmation email has been sent to <strong id="message__email">ash@loremcompany.com</strong>.
+          Please open it and click the button inside to confirm your subscription.
+        </p>
+      </section>
+      <button id="message__btn-dismiss" class="message__btn-dismiss">Dismiss message</button>
+    </article>
+    <!-- Success message end -->
+   </main>
   <script src="assets/js/javascript.js"></script>
 </body>
 </html>
