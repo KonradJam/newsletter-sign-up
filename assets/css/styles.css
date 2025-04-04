@@ -255,6 +255,7 @@ body {
   }
   .subscribe__container {
     gap: 2rem;
+    padding: 0;
   }
   .subscribe__contant {
     gap: 2rem;
